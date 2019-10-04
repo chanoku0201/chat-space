@@ -1,5 +1,4 @@
 # README
-
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
@@ -29,7 +28,7 @@ Things you may want to cover:
 |------|----|-------|
 |email|string|null: false, unique: true, index: false|
 |password|string|null: false, unique: true, index: false|
-|username|string|null: false unique: true, index: true|
+|name|string|null: false unique: true, index: true|
 ### Association
 - has_many :groups,through: :group_users
 - has_many :group_users
@@ -49,8 +48,8 @@ Things you may want to cover:
 |------|----|-------|
 |user_id|integer|null: false, unique: false, index: true, foreign_key: true|
 |group_id|integer|null: false, unique: false, index: true, foreign_key: true|
-|comment|text|null: true, unique: false, index: false, foreign_key: true|
-|image|text|null: false, unique: false, index: false, foreign_key: true|
+|comment|text|
+|image|text|
 ### Association
 - belongs_to :user
 - belongs_to :group
@@ -62,7 +61,7 @@ Things you may want to cover:
 |user_id|integer|null: false, unique: false, index true, foreign_key: true|
 ### Association
 - belongs_to :post
-- belongs_to :tag
+- belongs_to :group
 
 
 
