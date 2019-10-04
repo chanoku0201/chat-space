@@ -60,7 +60,7 @@ Things you may want to cover:
 |group_id|integer|null: false, unique: false, index: true, foreign_key: true|
 |user_id|integer|null: false, unique: false, index true, foreign_key: true|
 ### Association
-- belongs_to :post
+- belongs_to :user
 - belongs_to :group
 
 
