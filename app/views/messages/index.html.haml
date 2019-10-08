@@ -1,0 +1,46 @@
+.wrapper
+  .side
+    .side__top
+      .side__top__box
+        .side__top__box__user-name OKUDA
+        .side__top__box__menu
+          .side__top__box__menu__new-group
+            = link_to '#' do
+              = fa_icon 'edit', class: 'icon'
+          .side__top__box__menu__edit-user
+            = link_to '#' do
+              = fa_icon 'cog', class: 'icon'
+
+
+    .side__body
+      .side__body__group
+        .side__body__group__group-name FREELANCE
+        .side__body__group__latest-message enginer
+
+
+
+  .main
+    .main__top
+      .main__top__left-box
+        .main__box__left-box__group-name FREELANCE
+        %ul.main__box__left-box__member-list Member :
+        %ul.main__box__left-box__member-list__member okuda
+      .main__top__edit-btn Edit
+
+
+
+    .main__body
+      .main__body__message
+        .main__body__message__upper-info
+          .main__body__message__upper-info__talker okuda
+          .main__body__message__upper-info__date 2019/10/04(Fri) 14:35:20
+        .main__body__message__text おはよう
+
+    .form
+      %input.form__message__text{name: "message[content]", placeholder: "type a message", type: "text"}
+        .form__message__text__mask
+          %label.form__message__text__mask__image
+            = fa_icon 'picture-o', class: 'icon'
+            %input.hidden{type: 'file'}
+      .message_btn
+        %input.form__submit{type: 'submit', value: 'Send'}
