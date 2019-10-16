@@ -1,8 +1,6 @@
 $(function(){
   function buildHTML(message){
-    if ( message.image ) {
-      addImage = `<img src="${message.image.url}" class="lower-message__image">`;
-
+      addImage = (message.image) ? `<img src="${message.image.url}" class="lower-message__image">` : "";
       var html =
       `<div class="main_body_message" data-message-id=${message.id}>
           <div class="main__body__message__upper-info">
@@ -21,26 +19,7 @@ $(function(){
           <img src=${message.image} >
         </div>`
       return html;
-  }else {
-      var html =
-      `<div class="main_body_message" data-message-id=${message.id}>
-          <div class="main__body__message__upper-info">
-            <div class="main__body__message__upper-info__talker">
-              ${message.user_name}
-            </div>
-            <div class="main__body__message__upper-info__date">
-              ${message.date}
-            </div>
-          </div>
-          <div class="main__body__message__text">
-            <p class="main__body__message__text__index">
-              ${message.content}
-            </p>
-          </div>
-        </div>`
-      return html;
-    };
-  }
+    }
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
