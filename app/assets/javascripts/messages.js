@@ -1,6 +1,8 @@
 $(function(){
   function buildHTML(message){
     if ( message.image ) {
+      addImage = `<img src="${message.image.url}" class="lower-message__image">`;
+
       var html =
       `<div class="main_body_message" data-message-id=${message.id}>
           <div class="main__body__message__upper-info">
@@ -19,7 +21,7 @@ $(function(){
           <img src=${message.image} >
         </div>`
       return html;
-    } else {
+  }else {
       var html =
       `<div class="main_body_message" data-message-id=${message.id}>
           <div class="main__body__message__upper-info">
@@ -60,7 +62,7 @@ $(function(){
       $('.main__body').animate({scrollTop: $('.main__body')[0].scrollHeight}, 'fast');
     })
     .fail(function(){
-      alert('送信できなかったごめん');
+      alert('画像か文章どちらかがないと送信できません。もう一度やり直して下さい');
     });
     return false;
   })
