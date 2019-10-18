@@ -5,11 +5,15 @@
   .main
     .main__top
       .main__top__left-box
-        .main__box__left-box__group-name FREELANCE
-        %ul.main__box__left-box__member-list Member :
-        %ul.main__box__left-box__member-list__member okuda
-      .main__top__edit-btn Edit
-
+        .main__box__left-box__group-name
+          = @group.name
+        %ul.main__box__left-box__member-list
+          Member :
+        %ul.main__box__left-box__member-list__member
+          - @group.users.each do |user|
+            = user.name
+      .main__top__edit-btn
+        = link_to "edit", edit_group_path(@group)
     .main__body
       = render @messages
 
