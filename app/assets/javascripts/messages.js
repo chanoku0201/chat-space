@@ -33,8 +33,12 @@ $(function(){
       contentType: false,
     })
     .done(function(data){
+      var html = buildHTML(data);
+      $('.main__body').append(html);
+      $('form')[0].reset();
       $(".form__submit").prop("disabled", false);
       $('.main__body').animate({scrollTop: $('.main__body')[0].scrollHeight}, 'fast');
+
     })
     .fail(function(){
       alert('画像か文章どちらかがないと送信できません。もう一度やり直して下さい');
