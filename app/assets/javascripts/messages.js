@@ -35,8 +35,7 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.main__body').append(html);
-      $('.new_message')[0].reset();
-      $('.form__message').val('');
+      $('form')[0].reset();
       $(".form__submit").prop("disabled", false);
       $('.main__body').animate({scrollTop: $('.main__body')[0].scrollHeight}, 'fast');
 
